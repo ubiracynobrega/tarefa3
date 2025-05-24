@@ -1,0 +1,51 @@
+Comandos da tarefa 3
+1- Criar diretório e inicializar repositório
+mkdir tarefa-unidade3
+cd tarefa-unidade3
+git init
+
+2- Criar três arquivos e realizar commit inicial
+echo "Embarcatech IFRN arquivo1" > arquivo1.txt
+echo "Embarcatech IFRN arquivo2" > arquivo2.txt
+echo "Embarcatech IFRN arquivo3" > arquivo3.txt
+git add .
+git commit -m "Commit inicial: três arquivos criados"
+
+3- Alterar dois arquivos e registrar alterações
+echo "Nova linha no arquivo 1" >> arquivo1.txt
+echo "Nova linha no arquivo 2" >> arquivo2.txt
+git status
+git diff
+git add .
+git commit -m "Alterações nos arquivos 1 e 2"
+
+4- Visualizar histórico de commits
+git log
+git log --oneline
+git log --graph
+git log -p
+
+5- Reverter última alteração
+git revert HEAD
+
+6-  Alterar arquivo e usar stash
+echo "Alteração temporária no arquivo3" >> arquivo3.txt
+git stash
+git checkout -b nova-linha-desenvolvimento
+git checkout main
+git stash apply
+
+7 - Visualizar histórico recente com reflog
+git reflog
+
+8 -  Marcar commit inicial e enviar para repositório remoto
+git log --oneline
+git tag -a v1.0 -m "Versão estável inicial" <hash_do_commit_inicial>
+git remote add origin https://github.com/usuario/repositorio.git
+git push origin main
+git push origin v1.0
+
+9- comandos.txt
+git add comandos.txt
+git commit -m "Adiciona comandos utilizados na tarefa"
+git push origin main
